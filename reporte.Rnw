@@ -60,15 +60,15 @@
 \end{tabular}\\
 
 <<eval=TRUE, echo=FALSE>>=
-load("informe.RData")
+load("Hidro.RData")
 @
 
 {\bf\small DATOS DE LOS MEDIDORES:}\\[2mm]
 \begin{tabular}{|p{111pt}|p{100pt}|p{111pt}|p{100pt}|}\hline
 {\bf\scriptsize Fecha recepción medidor:} & {\small 28/06/15} & {\bf\scriptsize Medidor en servicio (Si/No)} & {\small NO}\\ \hline
-{\bf\scriptsize Fabricante:} & {\small \Sexpr{fab}} & {\bf\scriptsize Modelo:} & {\small \Sexpr{mod}}\\ \hline
-{\bf\scriptsize Número de serie:} & {\small 14005998} & {\bf\scriptsize Diámetro:} & {\small 15mm}\\ \hline
-{\bf\scriptsize Clase:} & {\small B} & {\bf\scriptsize Qn ($m^3/h$):} & {\small 1,5}\\ \hline
+{\bf\scriptsize Fabricante:} & {\small HIDROMETERS} & {\bf\scriptsize Modelo:} & {\small \Sexpr{modelo}}\\ \hline
+{\bf\scriptsize Número de serie:} & {\small \Sexpr{serie}} & {\bf\scriptsize Diámetro:} & {\small \Sexpr{diametro}}\\ \hline
+{\bf\scriptsize Clase:} & {\small \Sexpr{clase}} & {\bf\scriptsize Qn ($m^3/h$):} & {\small 1,5}\\ \hline
 {\bf\scriptsize MUG (litros):} & {\small 0,05} & {\bf\scriptsize Qmax ($m^3/h$):} & {\small 3}\\ \hline
 \end{tabular}\\
 
@@ -76,16 +76,17 @@ load("informe.RData")
 \begin{table}[H]
 \centering
 \begin{tabular}{|p{100pt}|p{30pt}|p{30pt}|p{30pt}|p{30pt}|}\hline
-{\bf\scriptsize RESULTADOS} & {\bf Qmax} & {\bf Qn} & {\bf Qt} & {\bf Qmin} \\ \hline
-{\bf\scriptsize Caudal (l/h)} & 3000 & 1500 & 120 & 30 \\ \hline
+{\bf\scriptsize RESULTADOS} & {\bf\scriptsize Qmax} & {\bf\scriptsize Qn} & {\bf\scriptsize Qt} & {\bf\scriptsize Qmin} \\ \hline
+{\bf\scriptsize Caudal (l/h)} & \Sexpr{qmax} & \Sexpr{qn} & \Sexpr{qt} & \Sexpr{qmin} \\ \hline
 {\bf\scriptsize Error 1 (\%)} & 0,09 & 0,26 & 0,69 & 0,40 \\ \hline
 {\bf\scriptsize Error promedio (\%)} & 0,09 & 0,26 & 0,69 & 0,40 \\ \hline
 {\bf\scriptsize Incertidumbre (\%)} & 0,10 & 0,10 & 0,50 & 0,50 \\ \hline
 \end{tabular}
 \end{table}
 
-
-\vspace{5cm}
+<<echo=FALSE, fig.align='center', fig.height=2.2, fig.width=4.5>>=
+print(grafico)
+@
 
 {\bf \small Comentarios:} \rule{0.87\textwidth}{.4pt}\\
 \rule{\textwidth}{.4pt}
